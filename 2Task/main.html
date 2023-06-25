@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test task</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<button class="button" onclick="openModal()">Регистрация</button>
+<div id="table-container"></div>
+<div class="modal" id="myModal">
+    <div class="modal__content">
+        <h2 class="modal__title">Регистрация</h2>
+        <form action="#" enctype="multipart/form-data">
+            <div class="input-group">
+                <input type="text" name="name" class="input" id="name-input" required>
+                <label class="input-label"><span class="input-label__required">✱</span> Название организации</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="phone" class="input" id="phone-input" required>
+                <label class="input-label"><span class="input-label__required">✱</span> Телефон</label>
+                <div id="phone-error" class="error-message">Введите корректный номер телефона</div>
+            </div>
+            <div class="input-group">
+                <input type="text" name="email" class="input" id="email-input" required>
+                <label class="input-label"><span class="input-label__required">✱</span> E-mail</label>
+                <div id="email-error" class="error-message">Введите корректный адрес электронной почты</div>
+            </div>
+
+            <div class="input-group input-group--select" style="width: 558px">
+                <select type="text" name="name" class="input" id="select-input" required>
+                    <option>Экология</option>
+                </select>
+                <label class="input-label"><span class="input-label__required">✱</span> Деятельность</label>
+            </div>
+
+            <div class="input-group input-group--browser" style="width: 558px">
+                <input type="text" name="name" class="input input--browser" id="browser-input" required value="yandex.ru">
+            </div>
+
+            <div class="input-group-file">
+                <label class="upload-label"> <p><img src="icons/avatar.svg"></p> Выберите файл</label>
+                <div id="avatar-upload" class="avatar-upload" onclick="document.getElementById('avatar-input').click()"></div>
+                <input type="file" name="avatar" id="avatar-input" accept="image/*" onchange="handleAvatarUpload(event)">
+                <button type="button" onclick="resetAvatar()" class="button button--reset"><img src="icons/Icon.svg"></button>
+            </div>
+
+            <button id="register-btn" class="button button--register" disabled>Зарегистрироваться</button>
+            <button onclick="closeModal()" class="button button--cancel">Отменить</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/fetch-data.js"></script>
+<script src="js/modal-window.js"></script>
+<script src="js/validate-form.js"></script>
+
+</body>
+</html>
